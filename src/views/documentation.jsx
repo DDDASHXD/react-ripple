@@ -24,10 +24,6 @@ const Documentation = () => {
             </section>
             <section>
                 <h2>Custom opacity</h2>
-                <p>
-                    You can set the opacity of the ripples by using the{" "}
-                    <i>opacity</i> prop.
-                </p>
                 <div className="preview">
                     <Ripple opacity={0.25}>
                         <button className="previewButton">0.25</button>

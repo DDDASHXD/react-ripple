@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Ripple } from "./lib";
 import { CopyBlock, dracula } from "react-code-blocks";
+import Slider from "./components/Slider";
 
 const Tryout = () => {
     const [elementValue, setElementValue] = useState("button");
@@ -80,6 +81,7 @@ const Tryout = () => {
                     ) : (
                         <div className="">Thats a weird error</div>
                     )}
+                    <button style={{ borderRadius: radiusValue }}>hello</button>
                 </div>
                 <div className="controls">
                     <div className="control">
@@ -104,6 +106,13 @@ const Tryout = () => {
                             max="50"
                             value={radiusValue}
                         />
+                        <Slider
+                            onChange={(val) => setRadiusValue(val)}
+                            min={1}
+                            max={50}
+                            value={radiusValue}
+                            step={1}
+                        />
                     </div>
                     <div className="control">
                         <p className="label">Opacity</p>
@@ -115,6 +124,12 @@ const Tryout = () => {
                             max="1"
                             step="0.01"
                             value={opacityValue}
+                        />
+                        <Slider
+                            onChange={(val) => setRadiusValue(val)}
+                            min={1}
+                            max={50}
+                            value={radiusValue}
                         />
                     </div>
                     <div className="control">
@@ -153,6 +168,7 @@ const App = () => {
         >
             ${elementCodeValue}
         </Ripple>
+        ${radiusValue}
     )
 }`}
                     language="jsx"

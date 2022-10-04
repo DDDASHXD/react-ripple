@@ -29,6 +29,26 @@ a {
     color: #000000;
 }
 
+//input type text
+input[type=text],input[type=number],select {
+    width: 100%;
+    border: 1px solid #ccc;
+    background: none;
+    padding: 5px 10px;
+    transition: border 0.25s ease;
+    border-radius: 99px;
+
+    &:active {
+        outline: none;
+        border: 1px solid #42A2E8;
+    }
+
+    &:focus {
+        outline: none;
+        border: 1px solid #42A2E8;
+    }
+}
+
 p {
 
     &.code {
