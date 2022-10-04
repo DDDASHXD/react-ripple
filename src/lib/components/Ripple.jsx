@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import "./Ripple.scss";
+import "./Ripple.css";
 
 const Ripple = (props) => {
     const [ripples, setRipples] = useState([]);

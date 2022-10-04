@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --main-width: 70rem;
+}
+
+.btn {
+  padding: 5px 20px;
+  border: none;
+  background: #1976D2;
+  border-radius: 100px;
+  color: white;
+}
+
+img {
+  width: 30rem;
+}
+
+p {
+  max-width: 30rem;
+}
+
+p.code {
+  font-family: "Roboto Mono", monospace;
+}
+
+p .red {
+  color: #C63131;
+}
+
+p .blue {
+  color: #298ACF;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.previewButton {
+  padding: 5px 30px;
+  border: none;
+  background: #42A2E8;
+  color: white;
+  border-radius: 10px;
+}
+
+.previewButton.white {
+  background: white;
+  border: 1px solid #42A2E8;
+  color: black;
+}
+
+.App .header {
+  background: #EAEAEA;
+  border-bottom: 1px solid #CDCDCD;
+}
+
+.App .header .wrapper {
+  width: var(--main-width);
+  margin: auto;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  position: relative;
+}
+
+.App .header .wrapper .title {
+  margin-bottom: 30px;
+}
+
+.App .header .wrapper .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+
+.App .header .wrapper .info .labels {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+.App .header .wrapper .info .value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+.App .header .wrapper .info .value p i {
+  color: #797979;
+}
+
+.App .header .wrapper .info .value .source {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .header .wrapper .info .value .source img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.App .header .wrapper .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: -1px;
+  isolation: isolate;
+}
+
+.App .header .wrapper .nav .navitem {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.App .header .wrapper .nav .navlinkbg {
+  background: white;
+  border: 1px solid #CDCDCD;
+  border-bottom: 0;
+  height: 100%;
+  width: 100px;
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: left 0.25s ease, width 0.25s ease;
+  transition: left 0.25s ease, width 0.25s ease;
+}
+
+.App .content {
+  width: var(--main-width);
+  min-height: 100vh;
+  margin: auto;
+  padding-top: 5rem;
+}
+
+.tryout {
+  border: 1px solid #CDCDCD;
+  border-radius: 10px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tryout .canvas {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.tryout .canvas input {
+  padding: 5px 10px;
+  border: 1px solid #CDCDCD;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin: 0;
+}
+
+.tryout .controls {
+  padding: 20px;
+  border-left: 1px solid #CDCDCD;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.tryout .controls .control input, .tryout .controls .control select {
+  width: 100%;
+}
+
+.tryout .controls .control .swatches {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3px;
+}
+
+.tryout .controls .control .swatches .swatch {
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.codeBlock {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.codeBlock * {
+  font-family: "Roboto Mono", monospace;
+}
+
+.content section {
+  margin-bottom: 5rem;
+}
+
+.content section .preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+  border: 1px solid #CDCDCD;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+/*# sourceMappingURL=main.css.map */

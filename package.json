@@ -1,8 +1,19 @@
 {
-  "name": "react-ripple",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@dashistrash/ripple",
+  "version": "1.0.1",
+  "private": false,
+  "description": "Add a material-like ripple effect to any element.",
+  "author": "dashistrash",
+  "keywords": ["react", "components", "ui", "material", "ripple", "effect"],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [ "dist", "README.md" ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DDDASHXD/react-ripple"
+},
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -16,6 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build-component": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -38,6 +50,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.3",
     "sass": "^1.55.0"
   }
 }
