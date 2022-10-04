@@ -7,9 +7,8 @@ const Ripple = (props) => {
     const el = useRef(null);
     const [styling, setStyling] = useState(null);
 
-    const addRipple = (e) => {
-        const rippleBounds = rippleContainer.current.getBoundingClientRect();
-        if (!styling && el.current) {
+    const getBorderRadius = () => {
+        if (el.current) {
             setStyling({
                 borderRadius: window
                     .getComputedStyle(el.current)
@@ -27,18 +26,47 @@ const Ripple = (props) => {
                     .getComputedStyle(el.current)
                     .getPropertyValue("border-bottom-right-radius"),
             });
-            console.log("styling", styling);
         }
-        console.log("styling", styling);
+    };
+
+    const addRipple = (e) => {
+        const rippleBounds = rippleContainer.current.getBoundingClientRect();
+        getBorderRadius();
 
         setRipples([
             ...ripples,
             {
                 x: e.clientX - rippleBounds.left,
                 y: e.clientY - rippleBounds.top,
+                color: props.color,
+                overlay:
+                    props.children.type === "img" ||
+                    props.children.type === "input"
+                        ? true
+                        : false,
             },
         ]);
     };
+
+    useEffect(() => {
+        getBorderRadius();
+    }, []);
+
+    let rippleMap = ripples.map((ripple, i) => {
+        return (
+            <div
+                className={`ripple ${ripple.overlay ? "overlay" : ""}`}
+                key={i}
+                style={{
+                    left: ripple.x,
+                    top: ripple.y,
+                    backgroundColor: ripple.color,
+                    "--duration": `${props.duration ? props.duration : 1000}ms`,
+                    "--opacity": `${props.opacity ? props.opacity : 0.25}`,
+                }}
+            ></div>
+        );
+    });
 
     return (
         <div
@@ -46,55 +74,15 @@ const Ripple = (props) => {
             onClick={(e) => addRipple(e)}
             onContextMenu={(e) => addRipple(e)}
             ref={rippleContainer}
-            style={styling}
+            style={{
+                ...styling,
+            }}
         >
-            {/* Copy the props.children element */}
-            {props.children.type !== "img" &&
-            props.children.type !== "input" ? (
-                <>
-                    {React.cloneElement(props.children, {
-                        // Add the ripple effect
-                        className: `${props.children.props.className} rippleElement`,
-                        style: {
-                            overflow: "hidden",
-                            position: "relative",
-                            isolation: "isolate",
-                        },
-                        children: [
-                            ...props.children.props.children,
-                            <>
-                                {ripples.map((ripple, index) => (
-                                    <div
-                                        className="ripple"
-                                        style={{
-                                            left: ripple.x,
-                                            top: ripple.y,
-                                        }}
-                                    ></div>
-                                ))}
-                            </>,
-                        ],
-                    })}
-                </>
-            ) : (
-                <>
-                    {React.cloneElement(props.children, {
-                        className: `${props.children.props.className} rippleElement`,
-                        ref: el,
-                    })}
-                    {ripples.map((ripple, index) => (
-                        <div
-                            className="ripple overlay"
-                            style={{
-                                left: ripple.x,
-                                top: ripple.y,
-                            }}
-                        ></div>
-                    ))}
-                </>
-            )}
-
-            {/* get children props */}
+            {React.cloneElement(props.children, {
+                className: `${props.children.props.className} rippleElement`,
+                ref: el,
+            })}
+            {rippleMap}
         </div>
     );
 };
