@@ -1,6 +1,6 @@
 {
   "name": "@dashistrash/ripple",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "description": "Add a material-like ripple effect to any element.",
   "author": "dashistrash",
