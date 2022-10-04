@@ -168,7 +168,6 @@ h2 {
 .tryout {
     border: 1px solid #CDCDCD;
     border-radius: 10px;
-    width: 100%;
     display: flex;
     margin-bottom: 20px;
 
@@ -252,3 +251,34 @@ table {
   tr:nth-child(even) {
     background-color: #f8f8f8;
   }
+
+
+//media query
+@media screen and (max-width: 1160px) {
+    :root {
+        --main-width: 50rem;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    :root {
+        --main-width: 95vw;
+    }
+}
+
+//#CDCDCD
+
+@media screen and (max-width: 535px) {
+    .tryout {
+        flex-direction: column;
+
+        .canvas {
+            padding: 50px;
+        }
+
+        .controls {
+            border-left: none;
+            border-top: 1px solid #CDCDCD;
+        }
+    }
+}

@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import useWindowSize from "./useWindowSize";
 
 const Nav = () => {
     const [active, setActive] = useState(0);
     const [cords, setCords] = useState({ x: 0, y: 0 });
+    const size = useWindowSize();
     const links = [
-        { label: "Documentation", href: "/documentation" },
-        { label: "Component props", href: "/props" },
+        {
+            label: `${size.width > 470 ? "Documentation" : "Docs"}`,
+            href: "/documentation",
+        },
+        {
+            label: `${size.width > 470 ? "Component Props" : "Props"}`,
+            href: "/props",
+        },
         { label: "Styles", href: "/styles" },
     ];
     const navigate = useNavigate();
