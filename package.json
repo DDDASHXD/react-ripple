@@ -8,6 +8,7 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [ "dist", "README.md" ],
+  "homepage": "https://ripple.justdiv.studio",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DDDASHXD/react-ripple"
