@@ -142,7 +142,7 @@ const Tryout = () => {
             </div>
             <div className="codeBlock">
                 <CopyBlock
-                    text={`import { Ripple } from "react-ripple";
+                    text={`import { Ripple } from "@dashistrash/ripple";
 
 const App = () => {
     return (

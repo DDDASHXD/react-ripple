@@ -6,14 +6,14 @@ import Tryout from "../tryout";
 const Documentation = () => {
     const text = {
         opacity: `<Ripple opacity={0.75} >
-        <button>Custom opacity!</button>
-    </Ripple>`,
+    <button>Custom opacity!</button>
+</Ripple>`,
         color: `<Ripple color="red">
-        <button>Custom color!</button>
-    </Ripple>`,
+    <button>Custom color!</button>
+</Ripple>`,
         duration: `<Ripple duration={500}>
-        <button>Custom duration!</button>
-    </Ripple>`,
+    <button>Custom duration!</button>
+</Ripple>`,
     };
 
     return (

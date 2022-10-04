@@ -33,19 +33,25 @@ function App() {
                             </div>
                             <div className="value">
                                 <p className="code">
-                                    npm install react-ripple <i>or</i> yarn add
-                                    react-ripple
+                                    npm install @dashistrash/ripple <i>or</i>{" "}
+                                    yarn add @dashistrash/ripple
                                 </p>
                                 <p className="code">
                                     <span className="red">import</span>{" "}
                                     {"{ Ripple }"}{" "}
                                     <span className="red">from</span>{" "}
-                                    <span className="blue">'react-ripple'</span>
+                                    <span className="blue">
+                                        '@dashistrash/ripple'
+                                    </span>
                                 </p>
-                                <div className="source">
+                                <a
+                                    href="https://github.com/DDDASHXD/react-ripple"
+                                    className="source"
+                                    target="_blank"
+                                >
                                     <img src={github} alt="" />
                                     <p>View source code</p>
-                                </div>
+                                </a>
                             </div>
                         </div>
                         <Nav />
