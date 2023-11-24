@@ -4,7 +4,7 @@ Create a material-like ripple effect on any element.
 
 ## Demo
 
-[You can view a demo of the component here](https://ripple.justdiv.studio)
+[You can view a demo of the component here](https://ripple.skxv.dev)
 
 ## Component
 
